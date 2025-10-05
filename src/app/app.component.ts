@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   private http = inject(HttpClient)
   private router = inject(Router)
   ngOnInit(): void {
-    this.http.get('http://localhost:2000/siteInfo').pipe(
+    this.http.get('http://localhost:3000/siteInfo').pipe(
       catchError((e, _): any => {
         this.router.navigate(['/not-local'])
       })
