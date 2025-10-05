@@ -1,0 +1,54 @@
+
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">Pages</h1>
+  </div>
+
+<div class="alert alert-warning">This section is not completed yet, but Products section is. <a routerLink="/admin/products">Go Check it now!</a></div>
+
+  <div class="card shadow mb-4">
+      <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Manage Pages</h6>
+      </div>
+      <div class="card-body">
+        <a routerLink="/admin/pages" class="btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+            <span class="text">Add Page</span>
+        </a><br><br>
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Permalink</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <!-- <tfoot>
+                      <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Permalink</th>
+                        <th>Actions</th>
+                    </tr>
+                    </tfoot> -->
+                <tbody>
+                  @for (page of pages; track $index) {
+                    <tr>
+                      <td>{{ $index + 1 }}</td>
+                      <td>{{ page.title }}</td>
+                      <td><a [href]="'/page/'+page.permalink" target="_blank" rel="noopener noreferrer">{{ page.permalink }} <i class="fa fa-external-link-alt"></i></a></td>
+                      <td>
+                        <button class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></button>&nbsp;
+                        <button class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+            </table>
+        </div>
+      </div>
+  </div>

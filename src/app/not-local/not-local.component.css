@@ -1,0 +1,36 @@
+/* Custom styling for layout and font (Necessary for 'modern' look) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+.message-card {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 1.5rem;
+    margin: 20px auto;
+}
+/* Redefining the warning look to be cleaner/more modern (Subtle background, strong outline) */
+.alert-custom-warning {
+    background-color: #f7f9fc; /* Very light slate/ash color */
+    color: #1e293b; /* Dark text */
+    border: 1px solid #e0e7ff; /* Subtle light border */
+    border-left: 6px solid #4f46e5; /* Strong, modern purple/indigo highlight */
+    border-radius: 1rem; /* Larger border radius for the alert itself */
+    transition: transform 0.2s;
+}
+.alert-custom-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.badge-cta {
+    /* Styling the README badge as a prominent action block */
+    background-color: #ef4444; /* Vibrant red */
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+.badge-cta:hover {
+    background-color: #dc2626;
+}

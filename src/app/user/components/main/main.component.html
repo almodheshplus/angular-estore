@@ -1,0 +1,266 @@
+<header id="header" class="header sticky-top">
+  <!-- Top Bar -->
+  <div class="top-bar py-2">
+    <div class="container-fluid container-xl">
+      <div class="row align-items-center">
+        <div class="col-lg-4 d-none d-lg-flex">
+          <div class="top-bar-item">
+            <i class="bi bi-telephone-fill me-2"></i>
+            <span>Need help? Call us: </span>
+            <a [href]="'tel:'+metaData?.contact?.phone">{{ metaData?.contact?.phone }}</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 text-center">
+          <div class="announcement-slider swiper init-swiper">
+            <div class="swiper-wrapper">
+              @for (item of metaData?.announcements; track $index) {
+                <div class="swiper-slide">{{ item }}</div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="d-flex justify-content-end">
+            <div class="top-bar-item dropdown me-3">
+              <a routerLink="/home" class="dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-translate me-2"></i>EN
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="javascript:void;"><i class="bi bi-check2 me-2 selected-icon"></i>English</a></li>
+              </ul>
+            </div>
+            <div class="top-bar-item dropdown">
+              <a routerLink="/home" class="dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="bi bi-currency-dollar me-2"></i>USD
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="javascript:void;"><i class="bi bi-check2 me-2 selected-icon"></i>USD</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <div class="main-header">
+    <div class="container-fluid container-xl">
+      <div class="d-flex py-3 align-items-center justify-content-between">
+
+        <!-- Logo -->
+        <a routerLink="home" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.webp" alt=""> -->
+          <h1 class="sitename">{{ metaData?.title }}</h1>
+        </a>
+
+        <!-- Search -->
+        <form class="search-form desktop-search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" [placeholder]="metaData?.searchText">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+
+        <!-- Actions -->
+        <div class="header-actions d-flex align-items-center justify-content-end">
+
+          <!-- Mobile Search Toggle -->
+          <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+            <i class="bi bi-search"></i>
+          </button>
+
+          <!-- Account -->
+          <div class="dropdown account-dropdown">
+            <button class="header-action-btn" routerLink="/admin">
+              <i class="bi bi-person"></i>
+            </button>
+          </div>
+
+          <!-- Cart -->
+          <a routerLink="cart" class="header-action-btn">
+            <i class="bi bi-cart3"></i>
+            <span class="badge">{{ cart.all().length }}</span>
+          </a>
+
+          <!-- Mobile Navigation Toggle -->
+          <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="header-nav">
+    <div class="container-fluid container-xl position-relative">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#" routerLink="home" routerLinkActive="active">Home</a></li>
+          <li><a href="#" routerLink="page/about" routerLinkActive="active">About</a></li>
+          <li><a href="#" routerLink="page/contact" routerLinkActive="active">Contact</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile Search Form -->
+  <div class="collapse" id="mobileSearch">
+    <div class="container">
+      <form class="search-form">
+        <div class="input-group">
+          <input type="text" class="form-control" [placeholder]="metaData?.searchText">
+          <button class="btn" type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</header>
+
+<main class="main">
+
+  <router-outlet />
+
+</main>
+
+<footer id="footer" class="footer dark-background">
+  <div class="footer-main">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-widget footer-about">
+            <a routerLink="home" class="logo">
+              <span class="sitename">{{ metaData?.title }}</span>
+            </a>
+            <p>{{ metaData?.description }}</p>
+
+            <div class="social-links mt-4">
+              <h5>Connect With Us</h5>
+              <div class="social-icons">
+                @for (item of metaData?.social; track $index) {
+                  <a [href]="item.link" [ariaLabel]="item.platform"><i [class]="'bi bi-'+item.platform"></i></a>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="footer-widget">
+            <h4>Shop</h4>
+            <ul class="footer-links">
+              <li><a href="category.html">New Arrivals</a></li>
+              <li><a href="category.html">Bestsellers</a></li>
+              <li><a href="category.html">Women's Clothing</a></li>
+              <li><a href="category.html">Men's Clothing</a></li>
+              <li><a href="category.html">Accessories</a></li>
+              <li><a href="category.html">Sale</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="footer-widget">
+            <h4>Support</h4>
+            <ul class="footer-links">
+              <li><a href="support.html">Help Center</a></li>
+              <li><a href="account.html">Order Status</a></li>
+              <li><a href="shiping-info.html">Shipping Info</a></li>
+              <li><a href="return-policy.html">Returns &amp; Exchanges</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a routerLink="page/contact">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-widget">
+            <h4>Contact Information</h4>
+            <div class="footer-contact">
+              <div class="contact-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>{{ metaData?.contact.address }}</span>
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-telephone"></i>
+                <span>{{ metaData?.contact.phone }}</span>
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-envelope"></i>
+                <span>{{ metaData?.contact.email }}</span>
+              </div>
+              <div class="contact-item">
+                <i class="bi bi-clock"></i>
+                <span>{{ metaData?.contact.openingTime }}</span>
+              </div>
+            </div>
+
+            <div class="app-buttons mt-4">
+              <a href="#" class="app-btn">
+                <i class="bi bi-apple"></i>
+                <span>App Store</span>
+              </a>
+              <a href="#" class="app-btn">
+                <i class="bi bi-google-play"></i>
+                <span>Google Play</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row gy-3 align-items-center">
+        <div class="col-lg-6 col-md-12">
+          <div class="copyright">
+            <p>© <span>Copyright</span> <strong class="sitename">{{ metaData?.title }}</strong>. All Rights Reserved.</p>
+          </div>
+          <div class="credits mt-1">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you've purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12">
+          <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+            <div class="payment-methods">
+              <div class="payment-icons">
+                @for (item of metaData?.paymentMethods; track $index) {
+                  <i [class]="'bi bi-'+item" [ariaLabel]="item"></i>
+                }
+              </div>
+            </div>
+
+            <div class="legal-links">
+              <a href="tos.html">Terms</a>
+              <a href="privacy.html">Privacy</a>
+              <a href="tos.html">Cookies</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>

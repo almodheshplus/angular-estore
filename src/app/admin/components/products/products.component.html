@@ -1,0 +1,136 @@
+
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">Products</h1>
+  </div>
+
+<div class="row">
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                          Products Count</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ products?.length }}</div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-boxes fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                          Total Price</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ totalPrice }}</div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-info shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Categories Count
+                      </div>
+                      <div class="row no-gutters align-items-center">
+                          <div class="col-auto">
+                              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ allCategories.length }}</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-box-open fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+  <div class="card shadow mb-4">
+      <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Manage Products</h6>
+      </div>
+      <div class="card-body">
+        <a routerLink="/admin/manage-product/add" class="btn btn-primary btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+            </span>
+            <span class="text">Add Product</span>
+        </a><br><br>
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Available</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Available</th>
+                        <th>Actions</th>
+                    </tr>
+                    </tfoot>
+                <tbody>
+                  @for (product of products; track $index) {
+                    <tr>
+                      <td>{{ $index + 1 }}</td>
+                      <td>{{ product.name }}</td>
+                      <td>{{ product.category }}</td>
+                      <td>{{ product.price }}</td>
+                      <td [innerHTML]="!product.available ? '<i class=\'fa fa-times-circle text-warning\'></i>' : '<i class=\'fa fa-check-circle text-success\'></i>'"></td>
+                      <td>
+                        <button [routerLink]="'/admin/manage-product/'+product.id" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></button>&nbsp;
+                        <button data-toggle="modal" data-target="#deletionConfirmationModal" (click)="productIdToDelete = product.id" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+            </table>
+        </div>
+      </div>
+  </div>
+
+  <!-- Deletion Modal-->
+  <div class="modal fade" id="deletionConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="deletionConfirmation"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="deletionConfirmation">Are you realy sure about that?</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                  </button>
+              </div>
+              <div class="modal-body">You realy want to delete this product? Deletion can't be undone!</div>
+              <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-danger" data-dismiss="modal" (click)="deleteProduct()">Delete</button>
+              </div>
+          </div>
+      </div>
+  </div>

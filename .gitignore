@@ -1,5 +1,12 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+# Custom
+*.code-workspace
+template/
+json-server/
+# Ignore tests
+*\.spec.ts
+
 # Compiled output
 /dist
 /tmp

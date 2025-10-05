@@ -1,0 +1,67 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Manage Products</h1>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">{{ mode | titlecase }} Product</h6>
+    </div>
+    <div class="card-body">
+
+      <div class="col-md-7 mx-auto">
+  <form action="/" method="post" [formGroup]="productForm" (submit)="productAction($event)">
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" [class]="{
+    'is-invalid': formControls['name'].errors && formControls['name'].touched
+  }" formControlName="name" id="productName" placeholder="Product Name">
+  <label for="productName">Product Name<sup class="text-danger">*</sup></label>
+</div>
+<div class="form-floating mb-3">
+  <input type="number" class="form-control" [class]="{
+    'is-invalid': formControls['price'].errors && formControls['price'].touched
+  }" formControlName="price" id="productPrice" placeholder="Product Price">
+  <label for="productPrice">Product Price<sup class="text-danger">*</sup></label>
+</div>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" [class]="{
+    'is-invalid': formControls['category'].errors && formControls['category'].touched
+  }" formControlName="category" id="productCategory" placeholder="Product Category">
+  <label for="productCategory">Product Category<sup class="text-danger">*</sup></label>
+</div>
+<div class="form-floating mb-3">
+  <textarea class="form-control" [class]="{
+    'is-invalid': formControls['description'].errors && formControls['description'].touched
+  }" [style.height]="'140px'" formControlName="description" id="productDescription" placeholder="Product Description"></textarea>
+  <label for="productDescription">Product Description<sup class="text-danger">*</sup></label>
+</div>
+<div class="form-floating mb-3">
+  <textarea class="form-control" [class]="{
+    'is-invalid': formControls['images'].errors && formControls['images'].touched
+  }" [style.height]="'140px'" formControlName="images" id="productImages" placeholder="Add images e.g.
+  https://example.com/image1.png
+  https://example.com/image2.png"></textarea>
+  <label for="productImages">Product Images<sup class="text-danger">*</sup></label>
+</div>
+<div class="form-check px-5">
+  <input class="form-check-input" type="checkbox" formControlName="available" id="isAvailable">
+  <label class="form-check-label" for="isAvailable">
+    Available in stock?
+  </label>
+</div>
+
+@if (invalidForm) {
+<div class="mt-4 alert alert-danger mb-0 shake">Please fill the required fields above.</div>
+}
+
+<button type="submit" class="btn btn-primary btn-icon-split mt-4">
+    <span class="icon text-white-50">
+        <i [class]="'fas fa-'+(mode =='edit' ? 'edit': 'plus')"></i>
+    </span>
+    <span class="text">{{ mode | titlecase}} Product</span>
+</button>
+
+</form>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+{
+  "siteInfo": {
+    "DOMTitle": "Angular EStore - Enjoy Shopping!",
+    "title": "Angular EStore",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.",
+    "contact": {
+      "phone": "+1 (234) 567-890",
+      "address": "123 Fashion Street, New York, NY 10001",
+      "email": "hello@example.com",
+      "openingTime": "'Monday-Friday': '9am-6pm<br>Saturday': '10am-4pm<br>Sunday': Closed"
+    },
+    "social": [
+      {
+        "platform": "facebook",
+        "link": "#"
+      },
+      {
+        "platform": "instagram",
+        "link": "#"
+      },
+      {
+        "platform": "twitter-x",
+        "link": "#"
+      },
+      {
+        "platform": "tiktok",
+        "link": "#"
+      },
+      {
+        "platform": "pinterest",
+        "link": "#"
+      },
+      {
+        "platform": "youtube",
+        "link": "#"
+      }
+    ],
+    "paymentMethods": [
+      "credit-card",
+      "paypal",
+      "apple",
+      "google",
+      "shop",
+      "cash"
+    ],
+    "searchText": "Search for products",
+    "announcements": [
+      "💰 30 days money back guarantee.",
+      "🎁 20% off on your first order",
+      "🚚 Free shipping on orders over $50"
+    ],
+    "heroTitle": "Discover Amazing Products",
+    "heroDescription": "Explore our curated collection of premium items designed to enhance your lifestyle. From fashion to tech, find everything you need with exclusive deals and fast shipping.",
+    "heroFeatures": [
+      {
+        "icon": "truck",
+        "text": "Free Shipping"
+      },
+      {
+        "icon": "award",
+        "text": "Quality Guarantee"
+      },
+      {
+        "icon": "headset",
+        "text": "24/7 Support"
+      }
+    ]
+  },
+  "pages": [
+    {
+      "id": "1",
+      "title": "About Us",
+      "permalink": "about",
+      "content": "<span class='section-badge'><i class='bi bi-info-circle'></i> About Us</span><div class='row'><div class='col-lg-6'><h2 class='about-title'>Nemo enim ipsam voluptatem quia voluptas aspernatur</h2><p class='about-description'>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p></div><div class='col-lg-6'><p class='about-text'>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p><p class='about-text'>Amet eos ut. Officiis soluta ab id dolor non sint. Corporis omnis consequatur quisquam ex consequuntur quo omnis. Quo eligendi cum. Amet mollitia qui quidem dolores praesentium quasi ut et.</p></div></div><div class='row features-boxes gy-4 mt-3'><div class='col-lg-4' data-aos='fade-up' data-aos-delay='200'><div class='feature-box'><div class='icon-box'><i class='bi bi-bullseye'></i></div><h3><a href='#' class='stretched-link'>At vero eos</a></h3><p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p></div></div><div class='col-lg-4' data-aos='fade-up' data-aos-delay='300'><div class='feature-box'><div class='icon-box'><i class='bi bi-person-check'></i></div><h3><a href='#' class='stretched-link'>Sed ut perspiciatis</a></h3><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p></div></div><div class='col-lg-4' data-aos='fade-up' data-aos-delay='400'><div class='feature-box'><div class='icon-box'><i class='bi bi-clipboard-data'></i></div><h3><a href='#' class='stretched-link'>Nemo enim ipsam</a></h3><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p></div></div></div><div class='row mt-5'><div class='col-lg-12' data-aos='zoom-in' data-aos-delay='200'><div class='video-box'><img src='assets/img/about/about-wide-1.webp' class='img-fluid' alt='Video Thumbnail'><a href='https://www.youtube.com/watch?v=Y7f98aduVJ8' class='glightbox pulsating-play-btn'></a></div></div></div>"
+    },
+    {
+      "id": "2",
+      "title": "Contact Us",
+      "permalink": "contact",
+      "content": ""
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "category": "Shoes",
+      "name": "cursus magna vel scelerisque",
+      "price": "$100",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.",
+      "available": true,
+      "images": [
+        "assets/img/product/product-5.webp"
+      ]
+    },
+    {
+      "name": "Mauris tempus cursus magna vel scelerisque",
+      "price": "$50",
+      "category": "Bags",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.",
+      "images": [
+        "assets/img/product/product-9.webp"
+      ],
+      "available": true,
+      "id": "2"
+    },
+    {
+      "id": "4",
+      "category": "Shoes",
+      "name": "Mauris tempus cursus",
+      "price": "$5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.",
+      "available": true,
+      "images": [
+        "assets/img/product/product-11.webp"
+      ]
+    },
+    {
+      "id": "3",
+      "category": "Womens",
+      "name": "Bags for ladyies",
+      "price": "$999",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.",
+      "available": true,
+      "images": [
+        "assets/img/product/product-1.webp"
+      ]
+    }
+  ]
+}
