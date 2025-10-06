@@ -33,7 +33,7 @@
                 <span class="input-icon">
                   <i class="bi bi-envelope"></i>
                 </span>
-                <input type="email" class="form-control" placeholder="Email address" formControlName="email" autocomplete="email">
+                <input type="email" value="hello@example.com" class="form-control" placeholder="Email address" formControlName="email" autocomplete="email">
               </div>
 
               @if (controls['password'].touched && controls['password'].invalid) {<div class="text-danger">Please enter the password.</div>}
@@ -41,8 +41,8 @@
                 <span class="input-icon">
                   <i class="bi bi-lock"></i>
                 </span>
-                <input type="password" class="form-control" placeholder="Password" formControlName="password" autocomplete="current-password">
-                <span class="password-toggle">
+                <input type="password" #password class="form-control" value="P@ssw0rd" placeholder="Password" formControlName="password" autocomplete="current-password">
+                <span class="password-toggle" (click)="password.type == 'text' ? password.type = 'password': password.type = 'text'">
                   <i class="bi bi-eye"></i>
                 </span>
               </div>
