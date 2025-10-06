@@ -11,7 +11,7 @@ npm run start # start angular
 ```
 
 ## Preview
-[![Watch the video](./public/preview.png)](./public/preview.mp4)
+<video src="./public/preview.mp4" controls></video>
 
 
 ## Development server
