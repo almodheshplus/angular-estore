@@ -98,9 +98,10 @@
       "category": "Bags",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in nibh vehicula, facilisis magna ut, consectetur lorem. Proin eget tortor risus.",
       "images": [
+        "assets/img/product/product-9.webp",
         "assets/img/product/product-9.webp"
       ],
-      "available": true,
+      "available": false,
       "id": "2"
     },
     {

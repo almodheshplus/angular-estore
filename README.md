@@ -3,9 +3,10 @@
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
 ## Running Locally
-To run it locally, run:
+To run it locally, run the following:
 ```bash
 npm i
+npm i -g json-server
 npm run server # start json-server
 npm run start # start angular
 ```
